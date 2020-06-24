@@ -1,8 +1,0 @@
-export JEKYLL_VERSION=3.8.6
-
-docker run --env=DEBUG=true --rm --volume="$PWD:/srv/jekyll" -it jekyll/jekyll:$JEKYLL_VERSION jekyll build
-docker run --name mydomain.com --env=DEBUG=true --rm --volume="$PWD:/srv/jekyll" -p 3000:4000 -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
-
-
-docker run --env=DEBUG=true  --rm --volume="$PWD:/srv/jekyll" --volume="$PWD/vendor/bundle:/usr/local/bundle" -it jekyll/jekyll:$JEKYLL_VERSION jekyll build
-docker run --name mydomain.com --env=DEBUG=true --rm --volume="$PWD:/srv/jekyll" -volume="$PWD/vendor/bundle:/usr/local/bundle" -p 3000:4000 -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
