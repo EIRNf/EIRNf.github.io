@@ -1,0 +1,26 @@
+{
+  "name": "EIRNf.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EIRNf/EIRNf.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EIRNf/EIRNf.github.io/issues"
+  },
+  "homepage": "https://github.com/EIRNf/EIRNf.github.io#readme",
+  "dependencies": {
+    "gatsby": "^2.23.10",
+    "latex.css": "^1.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
