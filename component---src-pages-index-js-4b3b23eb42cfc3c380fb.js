@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{RXBc:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),c=a.n(n);a("+ZDr");t.default=function(){return c.a.createElement("div",null,c.a.createElement("p",{class:"author"},"John Doe  December 7, 2020"),c.a.createElement("div",{class:"abstract"},c.a.createElement("h2",null,"Abstract"),c.a.createElement("p",null,"...")))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-4b3b23eb42cfc3c380fb.js.map
