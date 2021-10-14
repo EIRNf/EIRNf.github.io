@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-homepage-query-tsx",
     "path": "/",
-    "result": {"data":{"allPost":{"nodes":[{"slug":"/curses-counter-curses-and-more","title":"Curses and Counter-curses (Bewitch Your Friends and Befuddle Your Enemies with the Latest Revenges: Hair Loss, Jelly-Legs, Tongue-Tying, and Much, Much More)","date":"25.10.2019","excerpt":"Thestral dirigible plums, Viktor Krum hexed memory charm Animagus Invisibility Cloak three-headed Dog. Half-Blood Prince Invisibility Cloak…","timeToRead":1,"description":null,"tags":null}]}},"pageContext":{"formatString":"DD.MM.YYYY"}},
+    "result": {"data":{"allPost":{"nodes":[]}},"pageContext":{"formatString":"DD.MM.YYYY"}},
     "staticQueryHashes": ["2744905544","3090400250","318001574"]}
