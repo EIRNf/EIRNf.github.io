@@ -1,9 +1,8 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'eirn'
-theme = "paperesque"
+theme = ["paperesque","hugo-universal-theme"]
 
-[cascade.resources.params]
 
 ## Top level menu
 
@@ -15,22 +14,12 @@ theme = "paperesque"
   name = "cv"
   url = "cv/"
 
-
-## Home Page Menu
-
-[[params.menu]]
-  name = "about"
-  url = "about/"
-
-[[params.menu]]
-  name = "cv"
-  url = "cv/"
-
-[[params.menu]]
+[[params.topmenu]]
   name = "photography"
   url = "photography/"
 
-[[params.menu]]
+[[params.topmenu]]
   name = "recent posts"
   url = "posts/"
+
 
