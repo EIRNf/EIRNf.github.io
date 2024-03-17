@@ -1,8 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'eirn'
-theme = ["paperesque","hugo-universal-theme"]
-
+theme = ["paperesque","hugo-shortcode-gallery","hugo-PaperMod"]
 
 ## Top level menu
 

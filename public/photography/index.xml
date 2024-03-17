@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Photographies on eirn</title>
+    <link>http://localhost:1313/photography/</link>
+    <description>Recent content in Photographies on eirn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/photography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pictures Taken in Santa Cruz County</title>
+      <link>http://localhost:1313/photography/santa-cruz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/photography/santa-cruz/</guid>
+      <description>This is were I dump pictures that I took biking around Santa Cruz, California.</description>
+    </item>
+    <item>
+      <title>Portland Trip</title>
+      <link>http://localhost:1313/photography/trip-portland/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/photography/trip-portland/</guid>
+      <description>I took the Amtrack up to Portland! Lovely trip.</description>
+    </item>
+  </channel>
+</rss>

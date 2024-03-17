@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Esteban Ramos on eirn</title>
     <link>http://localhost:1313/</link>
     <description>Recent content in Esteban Ramos on eirn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
@@ -19,7 +20,22 @@
       <link>http://localhost:1313/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/cv/</guid>
-      <description>Esteban Ignacio Ramos Education 2016-2019 BSc, Computer Science; Emory University Minor: Applied Mathematics&#xA;Experience 2020-Present NCR Corporation, Atlanta Georgia, USA; Software Engineer I will begin working as a Software Engineer with NCR Corporation starting in mid February 2019 Verint Systems, Atlanta, Georgia, USA; Software Engineering Intern Developed a RESTful API in Java that facilitated querying of internal status information of a complex integration component in a largely self led project that was pushed into production after completion.</description>
+      <description>Esteban Ignacio Ramos Education 2016-2019 BSc, Computer Science; Emory University Minor: Applied Mathematics
+Experience 2020-Present NCR Corporation, Atlanta Georgia, USA; Software Engineer I will begin working as a Software Engineer with NCR Corporation starting in mid February 2019 Verint Systems, Atlanta, Georgia, USA; Software Engineering Intern Developed a RESTful API in Java that facilitated querying of internal status information of a complex integration component in a largely self led project that was pushed into production after completion.</description>
+    </item>
+    <item>
+      <title>Pictures Taken in Santa Cruz County</title>
+      <link>http://localhost:1313/photography/santa-cruz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/photography/santa-cruz/</guid>
+      <description>This is were I dump pictures that I took biking around Santa Cruz, California.</description>
+    </item>
+    <item>
+      <title>Portland Trip</title>
+      <link>http://localhost:1313/photography/trip-portland/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/photography/trip-portland/</guid>
+      <description>I took the Amtrack up to Portland! Lovely trip.</description>
     </item>
   </channel>
 </rss>
