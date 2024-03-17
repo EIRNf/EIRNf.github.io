@@ -1,4 +1,31 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'eirn'
 theme = "paperesque"
+
+
+## Top level menu
+
+[[params.topmenu]]
+  name = "about"
+  url = "about/"
+
+[[params.topmenu]]
+  name = "cv"
+  url = "cv/"
+
+
+## Home Page Menu
+
+[[params.menu]]
+  name = "about"
+  url = "about/"
+
+[[params.menu]]
+  name = "cv"
+  url = "cv/"
+
+[[params.menu]]
+  name = "recent posts"
+  url = "posts/"
+
