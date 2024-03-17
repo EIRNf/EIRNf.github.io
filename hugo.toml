@@ -1,13 +1,11 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'eirn'
-theme = ["paperesque","hugo-shortcode-gallery","hugo-PaperMod"]
+theme = ["paperesque","hugo-shortcode-gallery"]
 
 ## Top level menu
 
-[[params.topmenu]]
-  name = "about"
-  url = "about/"
+
 
 [[params.topmenu]]
   name = "cv"
