@@ -1,0 +1,11 @@
+
+<a href="{{.Get 1 }}">
+    <span class="inline-svg" >
+        {{- $fname:=print "fontawesome/" ( .Get 0 ) ".svg" -}}
+        {{- $path:="<path" -}}
+        {{- $fill:="<path fill=\"currentColor\"" -}}
+        {{ replace (readFile $fname) $path $fill | safeHTML }}
+    </span>
+</a>
+
+

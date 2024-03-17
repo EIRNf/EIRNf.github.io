@@ -78,6 +78,14 @@ body {
   background-color: white;
 }
 
+.inline-svg {
+  display: inline-block;
+  height: 1.15rem;
+  width: 1.15rem;
+  top: 0.15rem;
+  position: relative;
+}
+
 @media(min-width: 720px) {
 
   /* Make everything 10% smaller! */

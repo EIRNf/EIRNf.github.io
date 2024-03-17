@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="manifest" href="http://localhost:1313//site.webmanifest">
+<link rel="mask-icon" href="http://localhost:1313//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="keywords" content="">
+
+<meta property="og:title" content="Why can’t we just use the interpreter sometimes?" />
+<meta property="og:description" content="This project was completed as part of CSE-211 with Tyler Sorenson. Thanks for the great class!
+It is not a controversial statement that we care very deeply about performance. The programs that we write must run efficiently on a diverse set of hardware whose local software state can be equally as diverse. Similarly, program behavior varies over its lifetime, evolving workloads result in very different &ldquo;hot spots&rdquo; in both instruction execution and memory usage in our programs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/compilersproject/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-08T00:00:00+00:00" />
+
+<meta property="og:site_name" content="esteban" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why can’t we just use the interpreter sometimes?"/>
+<meta name="twitter:description" content="This project was completed as part of CSE-211 with Tyler Sorenson. Thanks for the great class!
+It is not a controversial statement that we care very deeply about performance. The programs that we write must run efficiently on a diverse set of hardware whose local software state can be equally as diverse. Similarly, program behavior varies over its lifetime, evolving workloads result in very different &ldquo;hot spots&rdquo; in both instruction execution and memory usage in our programs."/>
+
+
+<meta itemprop="name" content="Why can’t we just use the interpreter sometimes?">
+<meta itemprop="description" content="This project was completed as part of CSE-211 with Tyler Sorenson. Thanks for the great class!
+It is not a controversial statement that we care very deeply about performance. The programs that we write must run efficiently on a diverse set of hardware whose local software state can be equally as diverse. Similarly, program behavior varies over its lifetime, evolving workloads result in very different &ldquo;hot spots&rdquo; in both instruction execution and memory usage in our programs."><meta itemprop="datePublished" content="2022-12-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-12-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="3088">
+<meta itemprop="keywords" content="" />
+
+
+    <title>Why can’t we just use the interpreter sometimes? || esteban</title>
+    <link rel="canonical" href="http://localhost:1313/posts/compilersproject/" />
+
+    
+
+    <link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >esteban</a>
+      <span class="divider">/ </span>
+          <a href="/posts/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/resume/">
+              <span class="post-title">resume</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/photography/">
+              <span class="post-title">photography</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/posts/">
+              <span class="post-title">recent posts</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  <article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">Why can’t we just use the interpreter sometimes?</h1>
+  <meta itemprop="headline" content="Why can’t we just use the interpreter sometimes?" />
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">December 8, 2022</span></div>
+      <meta itemprop="dateModified" content="December 8, 2022"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <p><em>This project was completed as part of CSE-211 with Tyler Sorenson. Thanks for the great class!</em></p>
+<p>It is not a controversial statement that we care very deeply about performance. The programs that we write must run efficiently on a diverse set of hardware whose local software state can be equally as diverse. Similarly, program behavior varies over its lifetime, evolving workloads result in very different &ldquo;hot spots&rdquo; in both instruction execution and memory usage in our programs. One of the primary goals of compilater backends is to not only make a program actually executable but to also make it fast, and to make it fast in a lot of different machines. However, this race towards performance at all costs has resulted in a truism that doesn&rsquo;t necessarily hold in all circumstances. The truism that compiled applications tend to be overwhelmingly faster in pretty much all circumstances. This attitude is generally summarized in the belief that compiled languages are fast while interpreted or JIT-compiled languages are slow. While I admit that I&rsquo;m setting up a rhetorical staw man to construct my argunment this is not a wholly uncommon opinion. Attitudes such as this not only ignore the generally unseen and undiscussed cost<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>of compilation in complex environments but also make it difficult to leverage the robust amount of work that has gone into profile guided optimizations which are easier to implement in interpreter runtimes.</p>
+<h2 id="a-motivating-example">A Motivating Example</h2>
+<h3 id="a-straw-man">A Straw-man</h3>
+<figure><img src="/posts/compilersproject/InitialExampleCompilersCourseProject.png"
+    alt="The rare but frustrating deployment"><figcaption>
+      <p>The rare but frustrating deployment&ndash; Figure 1.</p>
+    </figcaption>
+</figure>
+
+<p>Let&rsquo;s start with Figure 1. Say you have a program you want to run in some other machine in your cluster. It can be a program you want to only run in another machine once as that machine has some raw data that you care to extract, or perhaps you want to run an embarrassingly parallel workload in which you need to run a lot equivalent programs in a large cluster. You happen to be lucky enough to be working with a new cluster that only has CPUs from a single provider from a single product line with equivalent low level features. In this scenario the process towards compiling and deploying your application is quite straightforward. You simply provide your compiler the compilation target information it needs <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and any dependencies and flags it needs to compile and then you run it! For the final deployment of your binaries you have two choices really, you either copy them over yourself over the network or you are likely to have some subsystem that does this for you <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<p>Now let&rsquo;s step away from dream land into a (slightly more) realistic scenario.</p>
+<p><figure><img src="/posts/compilersproject/DeploymentHell&#43;.png"
+    alt="It gets worse!"><figcaption>
+      <p>It gets worse!&ndash; Figure 2.</p>
+    </figcaption>
+</figure>
+
+Now looking at Figure 2 you might be wondering what&rsquo;s exactly happening here. You&rsquo;re in for some pain. You need to compile an application that&rsquo;s expected to run in a heterogenous environment. Maybe you want to leverage some specialized accelerator that is available to you, and at the same time you want to run your program on CPUs with different unique low level capabilities. You are also likely cross compiling now, as its very unusual to run a compilation job on a compute node. Now you have to go through the headache of orchestrating a rather complicated compilation, deployment, and execution effort.</p>
+<p>On top of all of this your applications now also have some unique special configuration that are very important for your runtime but also changes your application performance. If you didn&rsquo;t have such a heterogenous environment you could maybe do a couple profile runs with your configuration and tune your compiler flags and other inputs to get the best possible execution, but you aren&rsquo;t in such a nice world. Instead you would now need to fine tune what&rsquo;s essentially three highly divergent applications, each on different hardware.</p>
+<p>Well at least deploying your binaries is relatively the same, but again maybe not. Now you have to keep track of multiple different binaries that all must be delivered to different locations. Again, some subsystem might help you out but they are generally are not perfect, a single misconfiguration is all you need and you&rsquo;re left debugging a job that was supposed to start running hours ago.</p>
+<p>Admittedly this is a very contrived scenario. It&rsquo;s unlikely that something this bad happens often, and there are a lot of tools available that make every step of this process less painfule. Docker is perfect for many applications, and removes this problem entirely by packaging your deployment environment with your application. The downside with that approach is that you definitely lose out on some performance, and similarly there are a lot of large scale applications that arent designed to run on a containerized environment. In the HPC world, Slurm has an okay system for managing heterogenous compute and can help in linking complex dependencies in your compilation. That doesn&rsquo;t really address unique program behavior that might arise due to some distinct configuration, but well we are often satisfied without trying to do some fancy runtime optimizations if we get decent performance.</p>
+<p>One way or another, by the nature of our increasingly heterogenous environment we&rsquo;ve increased our compilation and coordination burden. This burden is especially heavy if the job you want to run doesn&rsquo;t really need to leverage economies of scale inherent to compilation ie. compile once run as many times as you want. You might also be in an environment in which simple recompilation is not exactly a good solution, one can take only so many coffee breaks after all.</p>
+<h3 id="a-pitch">A Pitch</h3>
+<figure><img src="/posts/compilersproject/TheDream.png"
+    alt="It gets worse!"><figcaption>
+      <p>It gets worse!&ndash; Figure 3.</p>
+    </figcaption>
+</figure>
+
+<p>A potential solution to most of the aforementioned problems is to pushdown the &ldquo;compilation&rdquo; step closer to the final execution of the program. Instead of cross compiling towards multiple different targets at a single node and deploying accordingly, we can instead compile to LLVM Bitcode or LLVM IR and ship these intermediate files to their final destination.</p>
+<p>Once at their targets, local instances of our compiler/interpreter infrastructure can consider job details<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, carry out some static analysis, and look at local machine state to decide whether it is wiser to interpret/JIT or compile. In either case we simplify our cross compilation obstacles and facilitate the deployment coordination. Simultaneously, having a program&rsquo;s IR in the same machine that is actually executing the code can give us access to the coveted world of runtime optimizations without needing to do any true source recompilation.</p>
+<p>To do this we need a runtime that can intake LLVM IR programs, decide whether to interpret, JIT, or compile and immediately execute the program.</p>
+<p>This doesn&rsquo;t resolve difficulties associated with managing dependencies and libraries. Similarly, while compiler backends have gotten really good at recognizing the diverse world of hardware devices, a significant amount of work would likely still be needed to do this seamlessly.</p>
+<p>The first step to really evaluate whether this is a viable solution is to compare the performance of interpreters, JIT Compilers, and compilation and execution. Most of this document will cover these experiments, and some other thoughts around how a robust decision mechanism can be built.</p>
+<h2 id="the-executor">The Executor</h2>
+<p><em>every bad prototype needs an overly important name!</em></p>
+<h3 id="llvm-project">LLVM Project</h3>
+<p>The LLVM Project is the backbone of modern compiler infrastructure. Most modern systems toolchains depend in at least one tool that comes from the project, and I&rsquo;m happy to continue this long tradition of building on their incredible hard work.</p>
+<p>The LLVM project includes Clang, LLDB, and crucially for this project lli. Lli is an LLVM IR Interpreter and JIT Compiler. The core of this project will use these tools to quickly prototype a comparison program to figure out the viability of such a runtime.</p>
+<p>The LLVM Project offers great support for creating new tools that use LLVM internals. This support lets you efficiently rewire LLVM together for whatever end you please. The final production of this kind of project would follow this approach to prevent any unnecessary overhead. However, as time is finite I opted for hacking together existing LLVM utilities to get my results.</p>
+<h3 id="project-design">Project Design</h3>
+<p><strong>The Executor</strong> is a simple execution engine that when provided an LLVM Bitcode will interpret it, JIT it, and compile and execute it. This comes with some nice testing infrastructure that reports on each approach&rsquo;s overall runtime. The current testing infrastructure also tries to account for any overhead that it&rsquo;s own presence introduces. While overall execution numbers are probably not fully optimized all runs include the same accounted for overhead, so the results are comparable to one another.</p>
+<p>This is the current state of the <strong>The Executor</strong>, as it stands it&rsquo;s nothing more than some nice testing infrastructure. I do hope to evolve the project into its eventual direction of being able to dynamically <em>decide</em> on which execution path makes the most sense. Something to consider however is that we do have a pretty short <em>decision</em> budget. The more time we spend trying to figure out the best choice the more we lose in potential performance gains.</p>
+<h4 id="thoughts-on-program-runtime">Thoughts on program runtime</h4>
+<p>How can we make predictions on program runtime without running into the halting problem? The answer is we can&rsquo;t. But we can pretend certainty is overrated and our best shot is good enough. Now that we&rsquo;ve dispensed ourselves with any epistemological anxieties we can move on to some practical techniques that can help us go very far.</p>
+<p>Generally, there are two broad categories that can help us figure out the runtime of programs, benchmarking and analysis.</p>
+<p>With benchmarking the only thing we need to is to develop a corpus of applications and inputs that are <em>hopefully</em> representative of any potential programs we see in the future. We can expect a program that falls under a benchmarking bucket with known inputs will behave similar enough to the benchmark. Things aren&rsquo;t so easy of course, with this methodology we run right into the classification problem. How do we even know if a program goes in one bucket and not the other? How do we build these categories? How do we analyze relatively low level LLVM to make categorical conclusions about program runtimes? How do we avoid the mistakes of everyone that has tried to do this in the past<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> (and there <em>is</em> a decent number of people who&rsquo;ve tried)? The categorical problem is less significant in the case that we only really make decisions based on benchmarks for programs we have seen before, or maybe the programs previous versions. This is less useful in the face of things we haven&rsquo;t seen before but can still be a valid approach.</p>
+<p>With benchmarking found wanting we turn to analysis. We can conclude certain things about a program&rsquo;s runtime by looking at its inputs and analyzing its LLVM IR. This is probably not so hard for certain aspects of program behavior. For example, loops nested many levels deep with a large number of iterations are probably going to take some more time than some non looping instructions. However, the problem explodes in complexity quickly. There is also the problem that the more analysis we do the more we burn our ever shortening decision budget. It is also redundant work that the Compiler is likely to repeat in the future as any inspection steps are likely going to look similar to analysis passes that we see in compiler infrastructure.</p>
+<p>There is no easy and &ldquo;complete&rdquo; solution here sadly.</p>
+<h2 id="results">Results</h2>
+<p>I wrote up a few programs and got a few from my Compilers coruse for this experiment. Each of these programs was run with the same testing infrastructure in the same machine with 100 executions to increase our measurement precision.</p>
+<h3 id="helloworld">HelloWorld</h3>
+<p>The simplest of HelloWorld programs! I was not necessarily expecting the compiler to be faster but it did surprise how much faster the interpreter and the JIT compiler were. This first experiment does give us an indication of how much overhead compilation can introduce.</p>
+<figure><img src="/posts/compilersproject/HelloWorld.png"
+    alt="HelloWorld Bench"><figcaption>
+      <p>HelloWorld Bench&ndash; Figure 4.</p>
+    </figcaption>
+</figure>
+
+<h3 id="inefficient-loop-and-local-value-numbering">Inefficient Loop and Local Value Numbering</h3>
+<p>The next experiment was to test out some programs in which compilers are famously helpful in. The Inefficient Loop program was composed of a loop which should be easy to interleave for better performance to leverage instruction level parallelism. While the Local Value Numbering program is simply a function call in which there is significant amounts of instructions that don&rsquo;t really do anything <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> (like a variable declaration that never gets used). In the scope of local optimizations compilers are great at handling these, as they really efficiently remove all instructions of these types.</p>
+<p>Again pretty surprising results! I was not expecting these to be as even as they are. I suspect that the LLVM Interpreter and JIT-Compiler do some local level optimizations as they go from module to module.</p>
+<figure><img src="/posts/compilersproject/InefficientLoopandLocalValueNumbering.png"
+    alt="HelloWorld Bench"><figcaption>
+      <p>HelloWorld Bench&ndash; Figure 4.</p>
+    </figcaption>
+</figure>
+
+<h3 id="matrix-multiplications">Matrix Multiplications</h3>
+<p>Out of all of the experiments this is the most interesting one. The interpreter and JIT-Compiler far outrun the Compiler until we start reaching larger and larger matrix sizes. This is the kind of result I hoped to see as there is a very clear cut between line in which the Compiler starts having equivalent performance to the interpreter and the JIT-Compiler. This experiment fully took 3-4 hours to run due to the overhead introduced by the extra executions to prevent outliers so I could not experiment past 2048x2048 dimensions, but its something I definitely want to try in the future. At large enough sizes will the compiler outrun the interpreter and JIT Compiler?</p>
+<figure><img src="/posts/compilersproject/MatrixMultiplication.png"
+    alt="HelloWorld Bench"><figcaption>
+      <p>HelloWorld Bench&ndash; Figure 4.</p>
+    </figcaption>
+</figure>
+
+<h3 id="shortcomings">Shortcomings</h3>
+<p>This exercise really only makes sense in one scenario, you want to deploy an application and run it only once on a machine you don&rsquo;t know all the details ahead of time. In any case in which a binary compiled ahead of time is ran against an interpreted or jitted program, the compiled binary will win. It is only in the rare scenario in which the execution of a program immediately preceds its compilation in which an interpreter or a JIT compiler could outperform compiler performance.</p>
+<p>There are some pretty significant shortcomings in how these benchmarks were carried out. There is the overhead that the testing infrastructure might&rsquo;ve introduced, I tried to mitigate for this as much as possible but it&rsquo;s unlikely I accounted for all of it. There is also caching behavior which is really hard to control for. During a few initial test runs there was definitely some caching behavior that improved program performance. I was not able to account for it properly for the final experiment, which does pollute the results. Under the scenario that I&rsquo;ve constructed our programs should be interpreted, JITed, or compiled and executed during the first time they are deployed to a machine. Caching behavior should definitely be controlled for in the future. This is also a very limited set of applications! Truly considering this as any representation of actual runtime performance for the interpreter, JIT Compiler, and Compiler would be inaccurate. To properly evaluate these we would not only need a much larger set of applications but also more efficient testing infrastructure.</p>
+<h3 id="future-work">Future Work</h3>
+<ul>
+<li>Executing a closure: I&rsquo;m really interesting in the idea of investigating this idea not on whole programs but on smaller closures. By limiting the scope of the program the advantages of interpretation are likely that much more significant.</li>
+<li>Investigating the performance implications of dependencies and linking: Dependencies are a headache and can introduce a lot overhead outside of your control. There is a lot to investigate here.</li>
+<li>Actual decision making mechanism: Benchmarking or analysis either one is interesting but having an actual framework for when programs should be compiled or interpreted introduces a lot of potential.</li>
+<li>Evaluating different compilers: Particularly for non CPU architectures.</li>
+<li>Profiling: Profiling the interpreters and compilers to see where most of the overhead is actually spent.</li>
+<li>WASM: Look into WASM as a valid IR langauge over LLVM. Increasingly it seems that WASM will be the go to standard for shippable non-compiled programs.</li>
+</ul>
+<h2 id="conclusions">Conclusions</h2>
+<p>While I tried to focus on three different applications of varying complexity, none of these applications really get at the core of our question. Is the benefit of compiler optmizations that can not be done in an interpreter or a JIT compiler worth it when speed of execution from compilation to deployment is the primary priority? We have not really answered this question. To do so we would need a set of applications that explictly contain the kind of scenarios in which a standard compiler could optimize in ways that an interpreter couldn&rsquo;t. An example of this kind of optimization are compiler managed slab allocations, in which the compiler must have a full view of the program to determine all memory accesses that could be grouped together.</p>
+<p>This is definitely only the first step in the dream of easy deployment and easy &ldquo;shippable&rdquo; code. These early results are encouraging and suggest that interpretation and JIT Compilation has gone a long way, and in some cases might be just as or more efficient than a traditional compile path. This argument however is limited to specific scenarios, as the place in which the compiler would truly shine would be with large programs with complex behaviors an interpreter or JIT compiler wouldn&rsquo;t be able to optimize. Similarly, the moment you need to execute your program more than once precompiling your binary is the thing to do.</p>
+<h3 id="bibliography">Bibliography</h3>
+<p>[1]“Creating an LLVM Project — LLVM 16.0.0git documentation.” <a href="https://llvm.org/docs/Projects.html">https://llvm.org/docs/Projects.html</a> (accessed Dec. 08, 2022).</p>
+<p>[2]Lee, Jenq-Kuen, “LLVM Bitcode Introduction,” p. 17, 2013.</p>
+<p>[3]C. Lattner and V. Adve, “LLVM: A compilation framework for lifelong program analysis &amp; transformation,” in <em>International Symposium on Code Generation and Optimization, 2004. CGO 2004.</em>, San Jose, CA, USA, 2004, pp. 75–86. doi: <a href="https://doi.org/10.1109/CGO.2004.1281665">10.1109/CGO.2004.1281665</a>.</p>
+<p>[4]A. Engelke and M. Schulz, “Robust Practical Binary Optimization at Run-time using LLVM,” in <em>2020 IEEE/ACM 6th Workshop on the LLVM Compiler Infrastructure in HPC (LLVM-HPC) and Workshop on Hierarchical Parallelism for Exascale Computing (HiPar)</em>, Nov. 2020, pp. 56–64. doi: <a href="https://doi.org/10.1109/LLVMHPCHiPar51896.2020.00011">10.1109/LLVMHPCHiPar51896.2020.00011</a>.</p>
+<p>[5]“Runtime Execution Profiling using LLVM.” <a href="https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/llvm-profiling/">https://www.cs.cornell.edu/courses/cs6120/2019fa/blog/llvm-profiling/</a> (accessed Nov. 15, 2022).</p>
+<p>[6]“The LLVM Compiler Infrastructure.” LLVM, Dec. 09, 2022. Accessed: Dec. 08, 2022. [Online]. Available: <a href="https://github.com/llvm/llvm-project">https://github.com/llvm/llvm-project</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>in developer hours more than anything&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>almost all modern toolchains do this for you&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Yes, even if you are running it from a distributed file system it still needs to be copied over the network&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>run once vs run many times&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>and there <em>is</em> a decent number of people who&rsquo;ve tried. In HPC you have a categorization of HPC applications, as described on this <a href="https://people.eecs.berkeley.edu/~krste/papers/BerkeleyView.pdf">paper</a>. As best as I know this didn&rsquo;t really succeed as a categorization framework.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>like a variable declaration that never gets used.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  </div>
+</article>
+
+  
+    
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+        <span class="flex-row v-center"></span>
+      
+      
+        <a href="http://localhost:1313/posts/talk_compute_io/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
+      
+      </nav>
+    </div>
+  
+
+  
+  </body>
+</html>

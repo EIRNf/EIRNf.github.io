@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'eirn'
+title = 'esteban'
 theme = ["paperesque","hugo-shortcode-gallery"]
 
 ## Top level menu
@@ -8,8 +8,8 @@ theme = ["paperesque","hugo-shortcode-gallery"]
 
 
 [[params.topmenu]]
-  name = "cv"
-  url = "cv/"
+  name = "resume"
+  url = "resume/"
 
 [[params.topmenu]]
   name = "photography"

@@ -1,6 +1,6 @@
 ---
 title: "Portland Trip"
-date: 
+date: "2023-08-14"
 ---
 
 I took the Amtrack up to Portland! Lovely trip.

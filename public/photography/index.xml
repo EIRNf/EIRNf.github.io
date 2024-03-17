@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Photographies on eirn</title>
+    <title>Photographies on esteban</title>
     <link>http://localhost:1313/photography/</link>
-    <description>Recent content in Photographies on eirn</description>
+    <description>Recent content in Photographies on esteban</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 23 Sep 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/photography/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pictures Taken in Santa Cruz County</title>
       <link>http://localhost:1313/photography/santa-cruz/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/photography/santa-cruz/</guid>
-      <description>This is were I dump pictures that I took biking around Santa Cruz, California.</description>
+      <description>This is were I dump pictures that I take while biking around Santa Cruz, California.</description>
     </item>
     <item>
       <title>Portland Trip</title>
       <link>http://localhost:1313/photography/trip-portland/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/photography/trip-portland/</guid>
       <description>I took the Amtrack up to Portland! Lovely trip.</description>
     </item>
