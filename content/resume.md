@@ -2,7 +2,7 @@
 
 <esiramos@ucsc.edu>
 
-# Educaton {#educaton .unnumbered}
+# Education {#Education .unnumbered}
 
 **University of California, Santa Cruz**
 
