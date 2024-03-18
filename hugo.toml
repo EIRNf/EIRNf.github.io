@@ -2,9 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'esteban'
 theme = ["paperesque"]
-
 ## Top level menu
-
 [[params.topmenu]]
   name = "resume"
   url = "resume/"

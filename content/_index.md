@@ -17,3 +17,7 @@ I am passionate about working on interesting problems with passionate people.
 Ask me about my interests in Distributed Systems, Cryptography, and Data Integration!
 
 Don't hesitate to reach out!
+
+- [resume]({{< ref "resume" >}} "resume") 
+- [posts]({{< ref "posts/" >}} "posts")
+- [photography]({{< ref "photography/" >}} "photography")
