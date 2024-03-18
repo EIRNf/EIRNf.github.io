@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on esteban</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on esteban</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs</title>
+      <link>http://localhost:1313/posts/talk_compute_io/</link>
+      <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/talk_compute_io/</guid>
+      <description>It was an absolute pleasure to attend the Computational IO Workshop. Lots of great talks and great work presented!&#xA;Talk + Slides&#xA;Talk Blurb Remote procedure calls are a major contributor to performance variance in distributed systems due to lack of isolation and contention on shared resources. In this talk, I will introduce the novel architecture we built to address this problem, and cover our experience in implementing a prototype over gRPC with an emphasis on the communication layer between a host CPU and the SmartNIC.</description>
+    </item>
+    <item>
+      <title>Why can’t we just use the interpreter sometimes?</title>
+      <link>http://localhost:1313/posts/compilersproject/</link>
+      <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/compilersproject/</guid>
+      <description>This project was completed as part of CSE-211 with Tyler Sorenson. Thanks for the great class!&#xA;It is not a controversial statement that we care very deeply about performance. The programs that we write must run efficiently on a diverse set of hardware whose local software state can be equally as diverse. Similarly, program behavior varies over its lifetime, evolving workloads result in very different &amp;ldquo;hot spots&amp;rdquo; in both instruction execution and memory usage in our programs.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html
+  lang="en-us"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="manifest" href="http://localhost:1313//site.webmanifest">
+<link rel="mask-icon" href="http://localhost:1313//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="keywords" content="">
+
+<meta property="og:title" content="Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs" />
+<meta property="og:description" content="It was an absolute pleasure to attend the Computational IO Workshop. Lots of great talks and great work presented!
+Talk &#43; Slides
+Talk Blurb Remote procedure calls are a major contributor to performance variance in distributed systems due to lack of isolation and contention on shared resources. In this talk, I will introduce the novel architecture we built to address this problem, and cover our experience in implementing a prototype over gRPC with an emphasis on the communication layer between a host CPU and the SmartNIC." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/talk_compute_io/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-08-17T00:00:00+00:00" />
+
+<meta property="og:site_name" content="esteban" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs"/>
+<meta name="twitter:description" content="It was an absolute pleasure to attend the Computational IO Workshop. Lots of great talks and great work presented!
+Talk &#43; Slides
+Talk Blurb Remote procedure calls are a major contributor to performance variance in distributed systems due to lack of isolation and contention on shared resources. In this talk, I will introduce the novel architecture we built to address this problem, and cover our experience in implementing a prototype over gRPC with an emphasis on the communication layer between a host CPU and the SmartNIC."/>
+
+
+<meta itemprop="name" content="Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs">
+<meta itemprop="description" content="It was an absolute pleasure to attend the Computational IO Workshop. Lots of great talks and great work presented!
+Talk &#43; Slides
+Talk Blurb Remote procedure calls are a major contributor to performance variance in distributed systems due to lack of isolation and contention on shared resources. In this talk, I will introduce the novel architecture we built to address this problem, and cover our experience in implementing a prototype over gRPC with an emphasis on the communication layer between a host CPU and the SmartNIC."><meta itemprop="datePublished" content="2023-08-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-08-17T00:00:00+00:00" />
+<meta itemprop="wordCount" content="168">
+<meta itemprop="keywords" content="" />
+
+
+    <title>Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs || esteban</title>
+    <link rel="canonical" href="http://localhost:1313/posts/talk_compute_io/" />
+
+    
+
+    <link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en-us">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >esteban</a>
+      <span class="divider">/ </span>
+          <a href="/posts/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/resume/">
+              <span class="post-title">resume</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/photography/">
+              <span class="post-title">photography</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/posts/">
+              <span class="post-title">recent posts</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  <article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs</h1>
+  <meta itemprop="headline" content="Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs" />
+  
+  
+    
+      <div class="post-date"><span itemprop="datePublished">August 17, 2023</span></div>
+      <meta itemprop="dateModified" content="August 17, 2023"/>
+    
+  
+  
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+    <p>It was an absolute pleasure to attend the Computational IO Workshop. Lots of great talks and great work presented!</p>
+<p><a href="https://skyhookdm.github.io/talks/20230817/esteban.ramos/">Talk + Slides</a></p>
+<h3 id="talk-blurb">Talk Blurb</h3>
+<p>Remote procedure calls are a major contributor to performance variance in distributed systems due to lack of isolation and contention on shared resources. In this talk, I will introduce the novel architecture we built to address this problem, and cover our experience in implementing a prototype over gRPC with an emphasis on the communication layer between a host CPU and the SmartNIC. The basic idea is to partition RPC applications into two communicating components: one dedicated to user-implemented business logic, and one dedicated to RPC infrastructure processing. The infrastructure process can be run on a dedicated core or on a smart NIC (e.g., IPU or DPU), providing effective physical isolation and predictable performance. An evaluation of a proof-of-concept prototype shows that the split architecture adds modest overhead for average case latency, but allows for lower latency and and higher throughput under host CPU load.</p>
+
+  </div>
+</article>
+
+  
+    
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="http://localhost:1313/posts/compilersproject/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: Why can’t we just use the interpreter sometimes?</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+  
+
+  
+  </body>
+</html>
