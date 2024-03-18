@@ -7,7 +7,8 @@ title: "Esteban Ramos"
 
 
 Hello! I am Esteban. Thanks for visiting my site!
-This site is supposed to stand as a simple place to showcase my work and stuff I am up to or whatever I find interesting really.
+
+This site is supposed to stand as a simple place to showcase my work, stuff I am up to, or whatever I find interesting really.
 
 I'm currently a PhD student at UCSC working on making Microservices faster and more efficient! My approach towards this is focused on optimizing the most common software infrastructure in the Microservice stack, the humble RPC framework.
 
