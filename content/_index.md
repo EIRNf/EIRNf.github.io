@@ -19,6 +19,6 @@ Ask me about my interests in Distributed Systems, Cryptography, and Data Integra
 
 Don't hesitate to reach out!
 
-- [resume]({{< ref "resume" >}} "resume") 
+- [resume](../data/Current_CV-3.pdf)
 - [posts]({{< ref "posts/" >}} "posts")
 - [photography]({{< ref "photography/" >}} "photography")
