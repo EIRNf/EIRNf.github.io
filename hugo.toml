@@ -5,7 +5,7 @@ theme = ["paperesque"]
 ## Top level menu
 [[params.topmenu]]
   name = "resume"
-  url = "resume/"
+  url = "resume.pdf"
 
 [[params.topmenu]]
   name = "photography"

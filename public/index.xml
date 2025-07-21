@@ -2,46 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Esteban Ramos on esteban</title>
-    <link>http://localhost:1313/</link>
+    <link>https://example.org/</link>
     <description>Recent content in Esteban Ramos on esteban</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Sep 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pictures Taken in Santa Cruz County</title>
-      <link>http://localhost:1313/photography/santa-cruz/</link>
+      <link>https://example.org/photography/santa-cruz/</link>
       <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/photography/santa-cruz/</guid>
+      <guid>https://example.org/photography/santa-cruz/</guid>
       <description>This is were I dump pictures that I take while biking around Santa Cruz, California.</description>
     </item>
     <item>
       <title>Split gRPC: An Isolation Architecture for RPC Stacks on SmartNICs</title>
-      <link>http://localhost:1313/posts/talk_compute_io/</link>
+      <link>https://example.org/posts/talk_compute_io/</link>
       <pubDate>Thu, 17 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/talk_compute_io/</guid>
+      <guid>https://example.org/posts/talk_compute_io/</guid>
       <description>It was an absolute pleasure to attend the Computational IO Workshop. Lots of great talks and great work presented!&#xA;Talk + Slides&#xA;Talk Blurb Remote procedure calls are a major contributor to performance variance in distributed systems due to lack of isolation and contention on shared resources. In this talk, I will introduce the novel architecture we built to address this problem, and cover our experience in implementing a prototype over gRPC with an emphasis on the communication layer between a host CPU and the SmartNIC.</description>
     </item>
     <item>
       <title>Portland Trip</title>
-      <link>http://localhost:1313/photography/trip-portland/</link>
+      <link>https://example.org/photography/trip-portland/</link>
       <pubDate>Mon, 14 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/photography/trip-portland/</guid>
+      <guid>https://example.org/photography/trip-portland/</guid>
       <description>I took the Amtrack up to Portland! Lovely trip.</description>
     </item>
     <item>
       <title>Why can’t we just use the interpreter sometimes?</title>
-      <link>http://localhost:1313/posts/compilersproject/</link>
+      <link>https://example.org/posts/compilersproject/</link>
       <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/compilersproject/</guid>
+      <guid>https://example.org/posts/compilersproject/</guid>
       <description>This project was completed as part of CSE-211 with Tyler Sorenson. Thanks for the great class!&#xA;It is not a controversial statement that we care very deeply about performance. The programs that we write must run efficiently on a diverse set of hardware whose local software state can be equally as diverse. Similarly, program behavior varies over its lifetime, evolving workloads result in very different &amp;ldquo;hot spots&amp;rdquo; in both instruction execution and memory usage in our programs.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/resume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/resume/</guid>
-      <description>Esteban I. Ramos esiramos@ucsc.edu&#xA;Educaton University of California, Santa Cruz&#xA;Ph.D. Student, Computer Science, 2021 - Present&#xA;Emory University&#xA;B.S. in Computer Science Minor in Applied Mathematics, 2019&#xA;Research Experience Graduate Student Researcher, Fall 2021 - Present&#xA;Language, Systems, and Data Lab at UCSC&#xA;Work under Dr. Peter Alvaro in the intersection of distributed systems, networks, and operating systems&#xA;Improving microservices communication performance by leveraging new disaggregated memory technologies enabled by CXL</description>
     </item>
   </channel>
 </rss>
