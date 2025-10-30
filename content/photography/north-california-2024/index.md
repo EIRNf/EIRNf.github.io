@@ -1,6 +1,6 @@
 ---
 title: "Pictures Taken in North California"
-date: "2024-09-23"
+date: "2024-11-12"
 ---
 
 Picture dump for 2024 of North California Adventures.
